@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "527907860651",
+    "project_id": "ics-main-firebase-portal",
+    "storage_bucket": "ics-main-firebase-portal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527907860651:android:367b90c04913f3165f87ee",
+        "android_client_info": {
+          "package_name": "com.reactjs.native.example.ics.ntf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527907860651-rsdjga7mlsb5rqi6ko5a7tnql32hub3i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeM3MzSEGfCGkXqfQO9ezh8idSjuRgJrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527907860651-rsdjga7mlsb5rqi6ko5a7tnql32hub3i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "527907860651-ua509hi4fh3su3c3k6ujm2ds4q1c1to0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.reactjs.native.example.ics.ntf",
+                "app_store_id": "1596562792"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
