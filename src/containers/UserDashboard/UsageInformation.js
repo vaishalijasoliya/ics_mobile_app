@@ -48,7 +48,7 @@ export default class UsageInformation extends Component {
       formData.append("userid", userId);
       formData.append("meterid", meterId);
       viewUsageInformationAPI(formData).then(usageInfo => {
-        console.log('USAGE INFORMATION RESPONSE>> ', JSON.stringify(usageInfo.data.result))
+        console.log('USAGE INFORMATION RESPONSE>> ', JSON.stringify(usageInfo.data.result[0]))
         if (usageInfo.data.status == true) {
           this.setState({ usageInformationList: usageInfo.data.result, message: null })
         }
@@ -71,7 +71,6 @@ export default class UsageInformation extends Component {
 
   render() {
     const {loading, usageInformationList, message, meter_name, meter} = this.state
-
     let filteredItems = [];    
     if (meter != null && meter.length > 0) {
       filteredItems = meter;
@@ -132,6 +131,10 @@ export default class UsageInformation extends Component {
                 isActive={item.isActive ? item.isActive : ''}
                 createdAt={item.createdAt ? item.createdAt : ''}
                 type={item.type ? item.type : ''}
+                flow_rate={item.flow_rate? item.flow_rate : ''}
+                usage_online = {item.usage ? item.usage : ''}
+                reading = {item.reading ? item.reading : ''}
+                telementry={item.telementry ? item.telementry : '' }
                 wr_number={item.wr_number ? item.wr_number : ''}
                 wr_volume={item.wr_volume ? item.wr_volume : ''}
                 usage={item.total ? item.total : ''}

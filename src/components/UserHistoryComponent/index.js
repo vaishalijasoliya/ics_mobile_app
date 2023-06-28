@@ -5,7 +5,7 @@ import { Actions } from 'react-native-router-flux';
 import { styles } from './style';
 import { dateMonthOfTimestamp } from '../../helpers/functions'
 import theme from '../../config/theme';
-import { back } from 'react-native/Libraries/Animated/src/Easing';
+// import { back } from 'react-native/Libraries/Animated/src/Easing';
 
 export default class UserHistoryComponent extends Component {
     constructor(props) {

@@ -6,8 +6,9 @@ import theme from '../../config/theme';
 
 export default class MeterPropertiesComponent extends Component {
   render() {
-    const { photo, wr_number, type, channel, serial, metername, meterproperty, username, contact_name } = this.props      
+    const { photo, wr_number,telementry, type,reading,flow_rate, channel, serial,usage_online, metername, meterproperty, username, contact_name } = this.props      
     return (
+      
       <View style={styles.albumContainer}>
         <View style={{ justifyContent : "center", alignItems : "center", paddingVertical : 30}}> 
           
@@ -61,7 +62,26 @@ export default class MeterPropertiesComponent extends Component {
                   <Text style={{ fontWeight : "400", fontSize : 14, textAlign : "left"}}>Property</Text>
                 </Left>
                 <Text ellipsizeMode='tail' numberOfLines={2} style={{ width: "50%",fontStyle: "italic",fontSize : 14,textAlign : "right"}}>{meterproperty?meterproperty:""}</Text>              
-              </CardItem>            
+              </CardItem>    
+              {telementry == 1 ? <>
+              <CardItem>
+                <Left>
+                  <Text style={{ fontWeight : "400", fontSize : 14, textAlign : "left"}}>Reading</Text>
+                </Left>
+                <Text ellipsizeMode='tail' numberOfLines={2} style={{ width: "50%",fontStyle: "italic",fontSize : 14,textAlign : "right"}}>{!!reading ? reading + " ML":""}</Text>              
+              </CardItem>
+              <CardItem>
+                <Left>
+                  <Text style={{ fontWeight : "400", fontSize : 14, textAlign : "left"}}>Usage</Text>
+                </Left>
+                <Text ellipsizeMode='tail' numberOfLines={2} style={{ width: "50%",fontStyle: "italic",fontSize : 14,textAlign : "right"}}>{!!reading?reading +' ML':""}</Text>              
+              </CardItem>
+              <CardItem>
+                <Left>
+                  <Text style={{ fontWeight : "400", fontSize : 14, textAlign : "left"}}>Flow Rate</Text>
+                </Left>
+                <Text ellipsizeMode='tail' numberOfLines={2} style={{ width: "50%",fontStyle: "italic",fontSize : 14,textAlign : "right"}}>{flow_rate == 0 ? 'NULL' :flow_rate + ' ML/day'}</Text>              
+              </CardItem></>: <></>}      
             </Card>
           </View>               
       </View>

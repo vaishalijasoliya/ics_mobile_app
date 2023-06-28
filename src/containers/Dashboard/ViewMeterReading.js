@@ -54,7 +54,8 @@ export default class ViewMeterReading extends Component {
     return  <Spinner color="#173a65" />
   }
   render() {
-    const { meter_id,username,contact_name,serial_number,meter_name,channel_name,property,meternumber,metertype,wr_number,image,createdAt,lastphoto } = this.props
+    
+    const { meter_id,username,telementry,flow_rate,reading,contact_name,serial_number,meter_name,channel_name,property,meternumber,metertype,wr_number,image,createdAt,lastphoto } = this.props
     const { meterReadings, message, loading } = this.state
     return (
       <Container style={styles.containerMainDiscover} >
@@ -71,7 +72,7 @@ export default class ViewMeterReading extends Component {
           </Right>
         </Header>
         <Content>
-          <MeterPropertiesComponent photo={lastphoto} wr_number={wr_number} type={metertype} channel={channel_name} serial={serial_number} metername={meter_name} meterproperty={property} username={username} contact_name={contact_name}  />
+          <MeterPropertiesComponent photo={lastphoto} wr_number={wr_number} telementry = {telementry} flow_rate = {flow_rate} reading = {reading} type={metertype} channel={channel_name} serial={serial_number} metername={meter_name} meterproperty={property} username={username} contact_name={contact_name}  />
           { loading && this.renderLoader()}   
          <View style={{ paddingBottom : 20}}>                                             
             { meterReadings != null &&  <FlatList 

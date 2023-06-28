@@ -8,7 +8,7 @@ export const MALLAWA_BASE_URL =
   "https://mallawa.intelligentcanalsystems.com/service/"; 
 // export const BASE_URL = PORTAL_BASE_URL;
 //export const BASE_URL = MALLAWA_BASE_URL;
-export const BASE_URL = MOIRA_BASE_URL;
+export const BASE_URL = MALLAWA_BASE_URL;
 export const SHOWORDER = BASE_URL == MALLAWA_BASE_URL ? false : true;
 //export const BASE_URL = "https://portal.intelligentcanalsystems.com/service/";
 
@@ -69,3 +69,5 @@ export const GET_NOTIFICATION = "get_notifications";
 export const SAVE_NOTIFICATION = "save_notifications";
 
 export const UPDATE_WATER_ORDER = "update_water_order";
+
+export const GET_ALL_CHANNEL = "get_all_channels";

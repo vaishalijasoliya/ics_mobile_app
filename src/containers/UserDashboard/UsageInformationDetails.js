@@ -14,7 +14,7 @@ class UsageInformationDetails extends Component {
     }
 
     render() {
-        const { id, serial_number, meter_name, channel_name, meter_type, property, water_right, comments, meterimage, wr_number, wr_volume } = this.props
+        const { id, serial_number, meter_name, channel_name, meter_type, property, water_right, comments,telementry,flow_rate,reading,usage_online, meterimage, wr_number, wr_volume } = this.props
         return (
             <Container style={styles.containerMainDiscover} >
                 <Header transparent>
@@ -78,8 +78,30 @@ class UsageInformationDetails extends Component {
                             <Left>
                                 <Text style={{ fontWeight: 'bold', fontSize: 16, textAlign: "left" }}>Water right Volume </Text>
                             </Left>
-                            <Text ellipsizeMode='tail' numberOfLines={3} style={{ width: "50%", fontSize: 16, fontStyle: "italic", textAlign: "right" }}> {wr_volume} </Text>
+                            <Text ellipsizeMode='tail' numberOfLines={3} style={{ width: "50%", fontSize: 16, fontStyle: "italic", textAlign: "right" }}> {wr_volume} ML </Text>
                         </CardItem>
+                        {telementry == 1 ?<>
+                        <CardItem>
+                            <Left>
+                                <Text style={{ fontWeight: 'bold', fontSize: 16, textAlign: "left" }}>Reading </Text>
+                            </Left>
+                            <Text ellipsizeMode='tail' numberOfLines={3} style={{ width: "50%", fontSize: 16, fontStyle: "italic", textAlign: "right" }}> {reading} ML </Text>
+                        </CardItem>
+                        <CardItem>
+                            <Left>
+                                <Text style={{ fontWeight: 'bold', fontSize: 16, textAlign: "left" }}>Usage </Text>
+                            </Left>
+                            <Text ellipsizeMode='tail' numberOfLines={3} style={{ width: "50%", fontSize: 16, fontStyle: "italic", textAlign: "right" }}> {!!reading ? reading +' ML' : "" }</Text>
+                        </CardItem>
+                          
+                        <CardItem>
+                            <Left>
+                                <Text style={{ fontWeight: 'bold', fontSize: 16, textAlign: "left" }}>Flow Rate </Text>
+                            </Left>
+                            <Text ellipsizeMode='tail' numberOfLines={3} style={{ width: "50%", fontSize: 16, fontStyle: "italic", textAlign: "right" }}> {flow_rate} ML/day </Text>
+                        </CardItem> 
+                        </>
+                        : <></>}
                     </Card>
                 </Content>
             </Container>
